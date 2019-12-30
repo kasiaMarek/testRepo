@@ -1,0 +1,29 @@
+spring:
+  application:
+    name: discovery
+
+server:
+  port: ${PORT:8762}
+  ssl:
+    enabled: true
+    client-auth: need
+    key-store: classpath:discoveryService.p12
+    key-store-password: '{cipher}ce57dc0d33f7112984d2a651e48b1fde43ab1bff23534b09a49fc5a1caecdf5f'
+    trust-store: classpath:discoveryService.p12
+    trust-store-password: '{cipher}4c47878b52b8b3b1ebe0b67ea8769658670565de4624a603d711bd05173f0c52'
+    key-alias: discovery
+
+security:
+  require-ssl: true
+
+eureka:
+  instance:
+    hostname: localhost
+    securePort: ${server.port}
+    securePortEnabled: true
+    nonSecurePortEnabled: false
+    metadataMap:
+      securePort: ${server.port}
+  client:
+    registerWithEureka: false
+    fetchRegistry: false

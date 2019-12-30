@@ -1,0 +1,38 @@
+server:
+  port: 8090
+  error:
+    whitelabel:
+      enabled: false
+  ssl:
+    enabled: true
+    key-store: classpath:idm.p12
+    key-store-password: '{cipher}9c804766bd5a83b2a2ea844431b263732ca50bcd2b2f31f2cb5758065500154e'
+    key-alias: idm
+
+eureka:
+  instance:
+    hostname: "localhost"
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+  client:
+    securePortEnabled: true
+    serviceUrl:
+      defaultZone: https://localhost:8762/eureka/
+
+logging:
+  level:
+    pl:
+      oakfusion: DEBUG
+
+mongo:
+  events:
+    dbname: idm-eventstore
+  readmodel:
+    dbname: idm-readmodel
+
+
+---
+
+spring:
+  profiles:
+    active: dev

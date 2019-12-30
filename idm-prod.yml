@@ -1,0 +1,13 @@
+mongo:
+  uri: mongodb://46.101.225.230:27017
+
+email:
+  templates-location: mail
+
+  default_sender:
+    address: testowy@oakfusion.pl
+    password: dupa1234
+
+  host:
+    address: sm   tp.gmail.com
+    port: 587

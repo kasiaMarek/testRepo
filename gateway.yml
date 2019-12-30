@@ -1,0 +1,38 @@
+info:
+  component: gateway
+
+endpoints:
+  restart:
+    enabled: true
+  shutdown:
+    enabled: true
+  health:
+    sensitive: false
+
+server:
+  port: ${PORT:8443}
+  ssl:
+    enabled: true
+    client-auth: want
+    key-store: classpath:gatewayService.p12
+    key-store-password: '{cipher}0b4723c9c56019368071aaa240272623880dbda361a431f587d2b637b5d127e4'
+    trust-store: classpath:gatewayService.p12
+    trust-store-password: '{cipher}58df3399f80a4a6f98f866fb1948e7ec6016b6728ff9f88c3477b87925d8c3df'
+    key-alias: gateway
+zuul:
+  sensitive-headers:
+
+ribbon:
+  IsSecure: true
+  trust-store: classpath:gatewayService.p12
+  trust-store-password: '{cipher}58df3399f80a4a6f98f866fb1948e7ec6016b6728ff9f88c3477b87925d8c3df'
+
+eureka:
+  instance:
+    nonSecurePortEnabled: false
+    securePortEnabled: true
+    secureVirtualHostName: ${spring.application.name}
+  client:
+    securePortEnabled: true
+    serviceUrl:
+      defaultZone: https://localhost:8762/eureka/

@@ -1,0 +1,10 @@
+idm:
+  roles:
+    adminEmail: "test@test.com"
+    adminRole: "ADMIN"
+    userRole: "USER"
+  jwt:
+    key: "!A%D*G-KaPdSgVkYp3s6v8y/B?E(H+MbQeThWmZq4t7w!z$C&F)J@NcRfUjXn2r5"
+
+security:
+  require-ssl: true

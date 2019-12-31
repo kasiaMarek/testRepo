@@ -8,9 +8,9 @@ server:
     enabled: true
     client-auth: need
     key-store: classpath:discoveryService.p12
-    key-store-password: '{cipher}ce57dc0d33f7112984d2a651e48b1fde43ab1bff23534b09a49fc5a1caecdf5f'
+    key-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
     trust-store: classpath:discoveryService.p12
-    trust-store-password: '{cipher}4c47878b52b8b3b1ebe0b67ea8769658670565de4624a603d711bd05173f0c52'
+    trust-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
     key-alias: discovery
 
 security:

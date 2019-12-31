@@ -6,7 +6,7 @@ server:
   ssl:
     enabled: true
     key-store: classpath:idm.p12
-    key-store-password: '{cipher}9c804766bd5a83b2a2ea844431b263732ca50bcd2b2f31f2cb5758065500154e'
+    key-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
     key-alias: idm
 
 eureka:

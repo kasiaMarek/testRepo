@@ -15,9 +15,9 @@ server:
     enabled: true
     client-auth: want
     key-store: classpath:gatewayService.p12
-    key-store-password: '{cipher}0b4723c9c56019368071aaa240272623880dbda361a431f587d2b637b5d127e4'
+    key-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
     trust-store: classpath:gatewayService.p12
-    trust-store-password: '{cipher}58df3399f80a4a6f98f866fb1948e7ec6016b6728ff9f88c3477b87925d8c3df'
+    trust-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
     key-alias: gateway
 zuul:
   sensitive-headers:
@@ -25,7 +25,7 @@ zuul:
 ribbon:
   IsSecure: true
   trust-store: classpath:gatewayService.p12
-  trust-store-password: '{cipher}58df3399f80a4a6f98f866fb1948e7ec6016b6728ff9f88c3477b87925d8c3df'
+  trust-store-password: ${SERVICE_BOX_KEYSTORE_PASS}
 
 eureka:
   instance:
